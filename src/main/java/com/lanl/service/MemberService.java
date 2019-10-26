@@ -21,8 +21,8 @@ public class MemberService implements UserDetailsService {
 	@Autowired
 	private MemberRepository memberRepository;
 	
-	@Autowired
-	private MailService mailService;
+//	@Autowired
+//	private MailService mailService;
 	
 	public void registerNewMember(RegisterForm registerForm) {
 		Member member = new Member();
@@ -55,7 +55,7 @@ public class MemberService implements UserDetailsService {
 			line.append("Your password is: " + member.getPassword() + "\n\n");
 			line.append("WebTrader\n");
 			logger.info(line.toString());
-			mailService.sendGenericMail(member.getEmail(), "WebTrader Forgot Password", line.toString());
+			//mailService.sendGenericMail(member.getEmail(), "WebTrader Forgot Password", line.toString());
 			return true;
 		} else {
 			logger.info("Member not found!");
